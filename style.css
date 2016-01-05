@@ -1,0 +1,17 @@
+body {
+  padding: 2em;
+}
+
+main {
+  margin: auto;
+  width: 75S%;
+}
+
+address {
+  display: inline-block;
+}
+
+hr {
+  margin: 2em;
+  width: 75%;
+}
