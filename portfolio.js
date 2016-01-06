@@ -15,10 +15,7 @@ Project.prototype.toHtml = function() {
   $newProject.find('img').attr('src', this.image);
 };
 
+
 data.forEach(function(data) {
   projects.push(new Project(data));
-});
-
-$(document).ready(function(){
-
 });
