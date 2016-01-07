@@ -6,14 +6,25 @@ view.handleMainNav = function() {
   //       single .tab-content section that is associated with the clicked .tab element.
   //       So: You need to dynamically build a selector string with the correct ID, based on the
   //       data available to you on the .tab element that was clicked.
-  $('.tab-content').hide();
-  $('#' + $(this).data('content')).fadeIn();
 
-  $('.tab').on('click', function(event) {
-    event.preventDefault();
-    var $content = $(this).data('content');
-  });
-}
+  $('.tab-content').hide();
+
+//   $('.main-nav .tab').on('click', function(event) {
+//     event.preventDefault();
+//     var $content = $(this).data('content');
+//     $('tab-content').each(function() {
+//     if($)(this).attr('id') === $content) {
+//       $(this).show();
+//     } else {
+//       $(this).hide();
+//     }
+//   }
+//     });
+//     $('#' + $(this).data('content')).fadeIn();
+//
+//
+//   });
+// }
 
 $(document).ready(function(){
   view.handleMainNav();
