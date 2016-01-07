@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Michael Sullivan</title>
-    <link rel="stylesheet" href="style.css"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.base.css">
+    <link rel="stylesheet" href="style.layout.css">
+    <link rel="stylesheet" href="style.modules.css">
   </head>
   <body>
     <header>
       <h1>Michael Sullivan</h1>
+    </header class="site-header clearfix">
+      <section class="heading-group-h1">
+        <h1>Michael Sullivan</h1>
+        <h2>Developer, Sage, Lothario</h2>
+      </section>
+      <nav class="main-nav">
+        <a class="icon-menu" href="#">&#9776;</a>
+        <ul>
+          <li class="tab" data-content="articles"><a href="#" class="icon-home">Home</a></li>
+          <li><a href="http://twitter.com/mbscotist" target="_blank" class="icon-twitter3"> Twitter</a></li>
+          <li><a href="http://github.com/scotist" target="_blank" class="icon-github"> GitHub</a></li>
+        </ul>
+      </nav>
     </header>
-    <nav class="main-nav">
-      <ul>
-        <!-- TODO: Use one of the icons from the available set for each of these nav items... -->
-        <li class="tab" data-content="articles"><a href="#"> Home</a></li>
-        <li class="tab" data-content="about"><a href="#"> About</a></li>
-        <li><a href="http://twitter.com/brookr" target="_blank"> Twitter</a></li>
-        <li><a href="http://github.com/brookr" target="_blank"> GitHub</a></li>
-      </ul>
-    </nav>
     <main>
-      <section id="articles" class="tab-content">
+      <section id="projects" class="tab-content">
         <div>
           <ul id="filters">
             <li>
@@ -36,20 +46,20 @@
               published <time pubdate datetime="2000-01-01">Publish Time</time>
             </div>
           </header>
-          <section class="article-body"></section>
+          <section class="project-body"></section>
           <a href="#" class="read-on">Read on &rarr;</a>
         </article>
       </section>
       <section id="about" class="tab-content">
         <header>
-          My Portfolio
+          Welcome to my Blog
         </header>
         <section>
-          <h1>A few of my interests:</h1>
+          <h1>Some of my intrests:</h1>
           <ul>
             <li>Coding</li>
             <li>Teaching</li>
-            <li>Hanging with my family</li>
+            <li>Synergizing</li>
           </ul>
         </section>
       </section>
@@ -59,6 +69,7 @@
       © 2015 Michael Sullivan | All Rights Reserved | Especially the First One
     </footer>
     <script src="jquery-2.1.4.js"></script>
+    <script src="projects.js"></script>
     <script src="portfolioview.js"></script>
     <script src="portfolio.js"></script>
   </body>
