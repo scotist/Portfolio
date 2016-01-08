@@ -13,9 +13,9 @@ Project.prototype.toHtml = function() {
   $newProject.find('a').attr('href', this.url);
   $newProject.find('p').attr(this.description);
   $newProject.find('img').attr('src', this.image);
-  $newProject.find('time[pubdate]').attr('datetime', this.publishedOn)
-  $newProject.find('time[pubdate]').attr('title', this.publishedOn)
-  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago')
+  $newProject.find('time[pubdate]').attr('datetime', this.publishedOn);
+  $newProject.find('time[pubdate]').attr('title', this.publishedOn);
+  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000) + ' days ago');
   $newProject.append('<hr>');
   return $newProject;
 };
@@ -30,4 +30,4 @@ data.forEach(function(data) {
 
 projects.forEach(function(a){
   $('#projects').append(a.toHtml());
-})
+});
