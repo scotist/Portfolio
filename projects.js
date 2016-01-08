@@ -1,5 +1,6 @@
 data = [
   {
+    category:     'Fun',
     title:        'Project One',
     url:          'http://www.projectone.com',
     description:  'This was one great project',
@@ -7,6 +8,7 @@ data = [
   },
 
   {
+    category:     'Work',
     title:        'Project Two',
     url:          'http://www.projecttwo.com',
     description:  'This was another great project',
