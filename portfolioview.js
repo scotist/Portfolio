@@ -1,20 +1,55 @@
-var view = {};
+var projectView = {};
 
-view.handleMainNav = function() {
-  // TODO: Add an event handler to .main-nav element that will power the Tabs feature.
-  //       Clicking any .tab element should hide all the .tab-content sections, and then reveal the
-  //       single .tab-content section that is associated with the clicked .tab element.
-  //       So: You need to dynamically build a selector string with the correct ID, based on the
-  //       data available to you on the .tab element that was clicked.
-  $('.tab-content').hide();
-  $('#' + $(this).data('content')).fadeIn();
-
-  $('.tab').on('click', function(event) {
-    event.preventDefault();
-    var $content = $(this).data('content');
+projectView.populateFilter = function() {
+  $('project').each(function() {
+    if(!$(this).hasClass('template')) {
+      var val = $(this).find('address a').text();
+      var optionTag = '<option value="' + val + '">' + val + '</option"';
+      $('#category-filter').append(optionTag);
+    }
   });
-}
+};
 
-$(document).ready(function(){
-  view.handleMainNav();
+projectView.handleCategoryFilter = function() {
+  $('#category-filter').on('change', function() {
+    if ($(this).val()) {
+      $('project').hide();
+      $('project[data-category="' + $(this).val() + '"]').fadeIn();
+    } else {
+      $('project').fadeIn();
+      $('project.template').hide();
+    }
+    $('#project-filter').val('');
+  });
+};
+
+projectView.handleMainNav = function() {
+  $('.main-nav').on('click', '.tab', function(e) {
+    $('.tab-content').hide();
+    $('#' + $(this).data('content')).fadeIn();
+  });
+  $('.main-nav .tab:first').click();
+};
+
+projectView.setTeasers = function() {
+  $('.article-body *:nth-of-type(n+2)').hide();
+  $('#articles').on('click', 'a.read-on', function(e) {
+    e.preventDefault();
+    $(this).parent().find('*').fadeIn();
+    $(this).hide();
+  });
+};
+
+projectView.menuToggle = function() {
+  $('.icon-menu').on('click', function() {
+    $('.main-nav ul').slideToggle();
+  });
+};
+
+$(document).ready(function() {
+  projectView.populateFilter();
+  projectView.handleCategoryFilter();
+  projectView.handleMainNav();
+  projectView.setTeasers();
+  projectView.menuToggle();
 });
