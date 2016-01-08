@@ -49,7 +49,7 @@ projectView.menuToggle = function() {
 $(document).ready(function() {
   projectView.populateFilter();
   projectView.handleCategoryFilter();
-  projectView.handleMainNav();
+  // projectView.handleMainNav();
   projectView.setTeasers();
   projectView.menuToggle();
 });
