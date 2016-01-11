@@ -1,14 +1,33 @@
 var projectView = {};
 
+// projectView.populateFilter = function() {
+//   $('project').each(function() {
+//     if(!$(this).hasClass('template')) {
+//       var val = $(this).find('address a').text();
+//       var optionTag = '<option value="' + val + '">' + val + '</option"';
+//       $('#category-filter').append(optionTag);
+//     }
+//   });
+// };
+
 projectView.populateFilter = function() {
   $('project').each(function() {
-    if(!$(this).hasClass('template')) {
+    if (!$(this).hasClass('template')) {
       var val = $(this).find('address a').text();
-      var optionTag = '<option value="' + val + '">' + val + '</option"';
-      $('#category-filter').append(optionTag);
+      var optionTag = '<option value="' + val + '">' + val + '</option>';
+      $('#author-filter').append(optionTag);
+
+      var val = $(this).find('address a').text();
+      var optionTag = '<option value="' + val + '">' + val + '</option>';
+      val = $(this).attr('data-category');
+      optionTag = '<option value="' + val + '">' + val + '</option>';
+      if ($('#category-filter option[value="' + val + '"]').length === 0) {
+        $('#category-filter').append(optionTag);
+      }
     }
   });
 };
+
 
 projectView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
@@ -49,7 +68,7 @@ projectView.menuToggle = function() {
 $(document).ready(function() {
   projectView.populateFilter();
   projectView.handleCategoryFilter();
-  projectView.handleMainNav();
+  // projectView.handleMainNav();
   projectView.setTeasers();
   projectView.menuToggle();
 });

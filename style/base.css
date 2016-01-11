@@ -1,3 +1,39 @@
+//
+
+/*
+
+header {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: inline-flex;
+}
+
+nav ul li {
+  width: 10em;
+}
+
+body {
+  text-align: center;
+  background-color: #B6DBB1;
+  color: #264954;
+}
+
+footer ul li {
+  display: inline-block;
+  width: 20em;
+}
+
+//
+
 
 img {
   max-width: 100%;
@@ -12,7 +48,7 @@ body {
 hr {
   margin: 1em;
   width: 80%;
-}
+}*/
 
 /*TEXT STYLES
 =======================================*/
