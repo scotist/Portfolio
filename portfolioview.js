@@ -23,22 +23,19 @@ projectView.menuToggle = function() {
 //   $('#new-form').on('change', 'input, textarea', projectView.create);
 // };
 
-// projectView.initIndexPage = function() {
-//   Project.all.forEach(function(a){
-//     $('#projects').append(a.toHtml());
-//   });
-//   projectView.handleMainNav();
-//   projectView.menuToggle();
-// };
+projectView.initIndexPage = function() {
+  Project.all.forEach(function(a){
+    $('#projects').append(a.toHtml());
+  });
+  projectView.handleMainNav();
+  projectView.menuToggle();
+};
 
 $.ajax('projects.json', function() {
   console.log(xhr);
 });
 
 $(document).ready(function() {
-  // projectView.populateFilter();
-  // projectView.handleCategoryFilter();
   projectView.handleMainNav();
-  // projectView.setTeasers();
   projectView.menuToggle();
 });
