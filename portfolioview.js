@@ -14,26 +14,14 @@ projectView.menuToggle = function() {
   });
 };
 
-// projectView.initNewProjectPage = function() {
-//   $('tab-content').show();
-//   $('#export-field').hide();
-//   $('#project-json').on('focus', function() {
-//     this.select();
-//   });
-//   $('#new-form').on('change', 'input, textarea', projectView.create);
-// };
 
 projectView.initIndexPage = function() {
   Project.all.forEach(function(a){
-    $('#projects').append(a.toHtml());
+    $('#projects').append(a.toHtml(a));
   });
   projectView.handleMainNav();
   projectView.menuToggle();
 };
-
-$.ajax('projects.json', function() {
-  console.log(xhr);
-});
 
 $(document).ready(function() {
   projectView.handleMainNav();
