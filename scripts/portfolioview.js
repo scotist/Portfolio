@@ -1,3 +1,5 @@
+(function(module) {
+
 var projectView = {};
 
 
@@ -26,8 +28,11 @@ projectView.initProjects = function(){
 
 $(document).ready(function() {
   projectView.handleMainNav();
-  // projectView.menuToggle();
+  projectView.menuToggle();
 });
+
+module.Article = Article;
+})(window);
 
 // projectView.handleMainNav = function() {
 //   $('.main-nav').on('click', '.tab', function(e) {

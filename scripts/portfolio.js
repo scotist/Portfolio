@@ -1,3 +1,5 @@
+(function(module) {
+
 function Project(features){
   this.title = features.title;
   this.picture = features.picture;
@@ -50,6 +52,8 @@ Project.fetchAll = function(){
   }
 };
 
+module.Article = Article;
+})(window);
 
 // function Project (content) {
 //   this.title = content.title;
