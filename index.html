@@ -18,8 +18,8 @@
             By <address><a href="{{url}}">See it here!</a></address>
           </div>
         </header>
-        <section class="project-body">{{{description}}}</section>
-        <a href="#" class="read-on">Read on &rarr;</a>
+        <section class="project-body">{{description}}</section>
+        <!-- <a href="#" class="read-on">Read on &rarr;</a> -->
       </article>
     </script>
   </head>
@@ -62,10 +62,10 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="jquery-2.1.4.js"></script>
-    <script src="marked.js"></script>
+    <script src="scripts/marked.js"</script>
     <script src="projects.json"></script>
-    <script src="portfolio.js"></script>
-    <script src="portfolioview.js"></script>
+    <script src="scripts/portfolio.js"></script>
+    <script src="scripts/portfolioview.js"></script>
     <script>
       Project.fetchAll();
     </script>
