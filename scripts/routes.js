@@ -1,4 +1,5 @@
 
-page('/', projectsController.index);
+page('/', articlesController.index);
 page('/about', aboutController.index);
+
 page();

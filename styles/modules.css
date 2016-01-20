@@ -1,0 +1,89 @@
+.site-header {
+  background: rgb(174, 198, 207);
+  font-family: 'Raleway', sans-serif;
+  max-width: 100%;
+  text-align: center;
+}
+
+.heading-group-h1 {
+  font-family: 'Raleway', sans-serif;
+  float: center;
+  padding: 0 0 .2em 1em;
+}
+
+.icon-menu {
+  font-size: 3em;
+  float: right;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.main-nav {
+  padding: 0.1em;
+}
+
+.main-nav ul {
+  display: none;
+  padding: 0;
+  list-style: none;
+  clear: both;
+}
+
+.main-nav:hover ul {
+  display: block;
+}
+
+.main-nav li {
+  margin-right: .4em;
+  font-size: 1.5em;
+  padding: .5em .2em;
+  border-bottom: 1px solid #ccc;
+}
+
+#articles {
+  background-color: lightgray;
+  max-width: 75%;
+  margin: 20px auto 20px auto;
+  text-align: left;
+}
+
+#about {
+  background-color: lightgray;
+  max-width: 75%;
+  margin: 20px auto 20px auto;
+  text-align: left;
+}
+
+.byline {
+  color: #777;
+}
+
+.byline a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 640px) {
+  .icon-menu {
+    display: none;
+  }
+
+  .main-nav {
+    padding: .2em .2em .2em 2em;
+  }
+
+  .main-nav ul {
+    display: block;
+  }
+
+  .main-nav ul li {
+    display: inline;
+    border-bottom: none;
+  }
+
+  .main-nav ul li:hover a {
+    color: black;
+  }
+
+}
