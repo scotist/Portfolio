@@ -1,0 +1,15 @@
+[
+  {
+    "category" :     "Fun",
+    "title" :        "Fantastic Project One",
+    "url" :          "http://www.projectone.com",
+    "description" :  "This was one great project"
+  },
+
+  {
+    "category" :     "Work",
+    "title" :        "Superlative Project Two",
+    "url" :          "http://www.projecttwo.com",
+    "description" :  "This was another great project"
+  }
+]
