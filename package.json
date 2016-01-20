@@ -1,0 +1,24 @@
+{
+  "name": "portfolioclass13",
+  "version": "1.0.0",
+  "description": "heroku deployment class 13",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scotist/Portfolio.git"
+  },
+  "author": "sapientia.veritas@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scotist/Portfolio/issues"
+  },
+  "homepage": "https://github.com/scotist/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.11"
+  }
+}
