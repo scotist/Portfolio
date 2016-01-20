@@ -16,11 +16,11 @@
   width: 50px;
 }
 
-.main-nav {
+.mainNav {
   padding: 0.1em;
 }
 
-.main-nav ul {
+.mainNav ul {
   /*display: none;*/
   padding: 0;
   list-style: none;
@@ -28,7 +28,7 @@
 }
 
 
-.main-nav li {
+.mainNav li {
   margin-right: .4em;
   font-size: 1.5em;
   padding: .5em .2em;
@@ -54,7 +54,7 @@
 }
 
 @media only screen and (min-width: 800px) {
-  .main-nav li {
+  .mainNav li {
     display: inline;
   }
   .icon-menu {

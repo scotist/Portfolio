@@ -16,11 +16,10 @@
           <h1>{{title}}</h1>
           <div class="byline">
             By <address><a href="{{url}}">See it here!</a></address>
-            published <time pubdate datetime="2000-01-01">Publish Time</time>
           </div>
         </header>
-        <section class="project-body">{{{description}}}</section>
-        <a href="#" class="read-on">Read on &rarr;</a>
+        <section class="project-body">{{description}}</section>
+        <!-- <a href="#" class="read-on">Read on &rarr;</a> -->
       </article>
     </script>
   </head>
@@ -32,27 +31,17 @@
       <nav class="main-nav">
         <a class="icon-menu" href="#">&#9776;</a>
         <ul>
-          <li class="tab" data-content="articles"><a href="#" class="icon-home">Home</a></li>
-          <li><a href="http://twitter.com/mbscotist" target="_blank" class="icon-twitter3"> Twitter</a></li>
-          <li><a href="http://github.com/scotist" target="_blank" class="icon-github"> GitHub</a></li>
+          <li class="tab" data-content="projects"><a href="#">Home</a></li>
+          <li class="tab" data-content="about"><a href="#">About</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <section id="projects" class="tab-content">
-        <div>
-          <ul id="filters">
-            <li>
-              <select id="category-filter">
-                <option value="">-- Filter by Categories --</option>
-              </select>
-            </li>
-          </ul>
-        </div>
       </section>
       <section id="about" class="tab-content">
         <header>
-          Welcome to my Blog
+          Welcome to my Portfolio. There are many like it but this one is mine.
         </header>
         <section>
           <h1>Some of my interests:</h1>
@@ -64,13 +53,20 @@
         </section>
       </section>
     </main>
-
     <footer>
       © 2015 Michael Sullivan | All Rights Reserved | Especially the First One
+      <ul>
+        <li><a href="http://twitter.com/mbscotist" target="_blank" class="icon-twitter3"> Twitter</a></li>
+        <li><a href="http://github.com/scotist" target="_blank" class="icon-github"> GitHub</a></li>
+      </ul>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="jquery-2.1.4.js"></script>
-    <script src="projects.js"></script>
-    <script src="portfolio.js"></script>
-    <script src="portfolioview.js"></script>
+    <script src="scripts/marked.js"</script>
+    <script src="projects.json"></script>
+    <script src="scripts/portfolio.js"></script>
+    <script src="scripts/portfolioview.js"></script>
+    <script>
+      Project.fetchAll();
+    </script>
   </body>
