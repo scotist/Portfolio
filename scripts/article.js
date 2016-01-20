@@ -34,8 +34,6 @@
     webDB.execute(
       [
         {
-          // 'sql': 'INSERT INTO articles (title, author, authorUrl, category, publishedOn, body) VALUES (?, ?, ?, ?, ?, ?);',
-          // 'data': [this.title, this.author, this.authorUrl, this.category, this.publishedOn, this.body],
           'sql': 'INSERT INTO articles (category, title, url, description) VALUES (?, ?, ?, ?);',
           'data': [this.category, this.title, this.url, this.description],
         }
@@ -60,8 +58,7 @@
     webDB.execute(
       [
         {
-          // 'sql': 'UPDATE articles SET title = ?, author = ?, authorUrl = ?, category = ?, publishedOn = ?, body = ? WHERE id = ?;',
-          // 'data': [this.title, this.author, this.authorUrl, this.category, this.publishedOn, this.body, this.id]
+
           'sql': 'UPDATE articles SET category = ?, title = ?, url = ?, description = ? WHERE id = ?;',
           'data': [this.category, this.title, this.url, this.description, this.id]
         }
@@ -95,52 +92,6 @@
       }
     });
   };
-
-  // Article.allAuthors = function() {
-  //   return Article.all.map(function(article) {
-  //     return article.author;
-  //   })
-  //   .reduce(function(names, name) {
-  //     if (names.indexOf(name) === -1) {
-  //       names.push(name);
-  //     }
-  //     return names;
-  //   }, []);
-  // };
-  //
-  // Article.numWordsAll = function() {
-  //   return Article.all.map(function(article) {
-  //     return article.body.match(/\b\w+/g).length;
-  //   })
-  //   .reduce(function(a, b) {
-  //     return a + b;
-  //   });
-  // };
-  //
-  // Article.numWordsByAuthor = function() {
-  //   return Article.allAuthors().map(function(author) {
-  //     return {
-  //       name: author,
-  //       numWords: Article.all.filter(function(a) {
-  //         return a.author === author;
-  //       })
-  //       .map(function(a) {
-  //         return a.body.match(/\b\w+/g).length;
-  //       })
-  //       .reduce(function(a, b) {
-  //         return a + b;
-  //       })
-  //     };
-  //   });
-  // };
-  //
-  // Article.stats = function() {
-  //   return {
-  //     numArticles: Article.all.length,
-  //     numWords: Article.numwords(),
-  //     Authors: Article.allAuthors(),
-  //   };
-  // };
 
   module.Article = Article;
 })(window);
