@@ -4,14 +4,15 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-
-    var qs = '?per_page=100&sort=updated';
-    $.ajax({url:'https://api.github.com/users/scotist/repos' + qs, type: 'GET', headers: {Authorization: 'token ' + token.githubToken}})
-    .done(function(data, message, xhr) {
-      repos.all = data;
-      console.log(repos.all);
+    $.get({
+      url: '/github/users/scotist/repos' +
+          '?per_page=100' + '&sort=updated',
+          // type: 'GET',
     })
-    .done(callback);
+      .done(function(data, message, xhr) {
+        repos.all = data;
+      })
+      .done(callback);
   };
 
   repos.with = function(attr) {
