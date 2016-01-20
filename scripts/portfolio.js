@@ -52,7 +52,7 @@ Project.fetchAll = function(){
   }
 };
 
-module.Article = Article;
+module.Project = Project;
 })(window);
 
 // function Project (content) {

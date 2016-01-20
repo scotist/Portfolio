@@ -31,7 +31,7 @@ $(document).ready(function() {
   projectView.menuToggle();
 });
 
-module.Article = Article;
+module.projectView = projectView;
 })(window);
 
 // projectView.handleMainNav = function() {
