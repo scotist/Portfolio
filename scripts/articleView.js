@@ -2,11 +2,6 @@
   var articleView = {};
   var render = function(article) {
     var template = Handlebars.compile($('#article-template').text());
-
-    // article.daysAgo = parseInt((new Date() - new Date(article.publishedOn))/60/60/24/1000);
-    // article.publishStatus = article.publishedOn ? 'published ' + article.daysAgo + ' days ago' : '(draft)';
-    // article.body = marked(article.body);
-
     return template(article);
   };
 
@@ -26,13 +21,9 @@
 
     article = new Article({
       title: $('#article-title').val(),
-      // author: $('#article-author').val(),
       url: $('#article-url').val(),
-      // authorUrl: $('#article-author-url').val(),
       category: $('#article-category').val(),
-      // body: $('#article-body').val(),
       description: $('#article-description').val()
-      // publishedOn: $('#article-published:checked').length ? util.today() : null
     });
 
     $('#articles').append(render(article));
