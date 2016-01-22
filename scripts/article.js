@@ -74,7 +74,6 @@
   };
 
   Article.fetchAll = function(next) {
-    // webDB.execute('SELECT * FROM articles ORDER BY publishedOn DESC', function(rows) {
     webDB.execute('SELECT * FROM articles', function(rows) {
 
       if (rows.length) {

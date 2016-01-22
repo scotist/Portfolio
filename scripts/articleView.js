@@ -1,12 +1,15 @@
 (function(module) {
   var articleView = {};
+
   var render = function(article) {
     var template = Handlebars.compile($('#article-template').text());
     return template(article);
   };
 
   articleView.initNewArticlePage = function() {
-    $('.tab-content').show();
+    // better version below?
+    $('#articles').show().siblings().hide();
+    // $('.tab-content').show();
     $('#export-field').hide();
     $('#article-json').on('focus', function(){
       this.select();
@@ -14,6 +17,8 @@
 
     $('#new-form').on('change', 'input, textarea', articleView.create);
   };
+
+
 
   articleView.create = function() {
     var article;
@@ -36,8 +41,19 @@
     $('#article-json').val(JSON.stringify(article) + ',');
   };
 
-  articleView.initIndexPage = function() {
-    Article.all.forEach(function(a){
+  // articleView.initIndexPage = function() {
+  //   Article.all.forEach(function(a){
+  //     $('#articles').append(render(a));
+  //   });
+  // };
+
+  // trying out articleView.index
+  articleView.index = function(articles) {
+    $('#articles').show().siblings().hide();
+
+    $('#articles article').remove();
+    console.log(articles);
+    articles.forEach(function(a) {
       $('#articles').append(render(a));
     });
   };
