@@ -1,6 +1,4 @@
 
-page('/',
-  // articlesController.loadAll,
-  articlesController.index);
+page('/', articlesController.index);
 page('/about', aboutController.index);
 page();

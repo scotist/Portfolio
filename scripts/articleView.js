@@ -6,54 +6,8 @@
     return template(article);
   };
 
-  articleView.initNewArticlePage = function() {
-    // better version below?
-    $('#articles').show().siblings().hide();
-    // $('.tab-content').show();
-    $('#export-field').hide();
-    $('#article-json').on('focus', function(){
-      this.select();
-    });
-
-    $('#new-form').on('change', 'input, textarea', articleView.create);
-  };
-
-
-
-  articleView.create = function() {
-    var article;
-    $('#articles').empty();
-
-    article = new Article({
-      title: $('#article-title').val(),
-      url: $('#article-url').val(),
-      category: $('#article-category').val(),
-      description: $('#article-description').val()
-    });
-
-    $('#articles').append(render(article));
-
-    $('pre code').each(function(i, block) {
-      hljs.highlightBlock(block);
-    });
-
-    $('#export-field').show();
-    $('#article-json').val(JSON.stringify(article) + ',');
-  };
-
-  // articleView.initIndexPage = function() {
-  //   Article.all.forEach(function(a){
-  //     $('#articles').append(render(a));
-  //   });
-  // };
-
-  // trying out articleView.index
-  articleView.index = function(articles) {
-    $('#articles').show().siblings().hide();
-
-    $('#articles article').remove();
-    console.log(articles);
-    articles.forEach(function(a) {
+  articleView.initIndexPage = function() {
+    Article.all.forEach(function(a){
       $('#articles').append(render(a));
     });
   };

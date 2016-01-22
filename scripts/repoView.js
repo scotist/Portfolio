@@ -14,7 +14,6 @@
 
   repoView.index = function() {
     ui();
-
     $('#about ul').append(
       repos.with('forks_count').map(render)
     );

@@ -23,44 +23,12 @@
     );
   };
 
-  Article.truncateTable = function(callback) {
-    webDB.execute(
-      'DELETE FROM articles;',
-      callback
-    );
-  };
-
   Article.prototype.insertRecord = function(callback) {
     webDB.execute(
       [
         {
           'sql': 'INSERT INTO articles (category, title, url, description) VALUES (?, ?, ?, ?);',
           'data': [this.category, this.title, this.url, this.description],
-        }
-      ],
-      callback
-    );
-  };
-
-  Article.prototype.deleteRecord = function(callback) {
-    webDB.execute(
-      [
-        {
-          'sql': 'DELETE FROM articles WHERE id = ?;',
-          'data': [this.id]
-        }
-      ],
-      callback
-    );
-  };
-
-  Article.prototype.updateRecord = function(callback) {
-    webDB.execute(
-      [
-        {
-
-          'sql': 'UPDATE articles SET category = ?, title = ?, url = ?, description = ? WHERE id = ?;',
-          'data': [this.category, this.title, this.url, this.description, this.id]
         }
       ],
       callback
@@ -75,7 +43,6 @@
 
   Article.fetchAll = function(next) {
     webDB.execute('SELECT * FROM articles', function(rows) {
-
       if (rows.length) {
         Article.loadAll(rows);
         next();
