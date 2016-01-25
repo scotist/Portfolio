@@ -9,14 +9,11 @@
   };
 
   var render = function(repo) {
-    console.log('render?!?');
-    console.log('what is this?!');
     return '<li>' + repo.name + ': ' + repo.url + '</li>';
   };
 
   repoView.index = function() {
     ui();
-
     $('#about ul').append(
       repos.with('forks_count').map(render)
     );

@@ -7,7 +7,6 @@
     $.get({
       url: '/github/users/scotist/repos' +
           '?per_page=100' + '&sort=updated',
-          // type: 'GET',
     })
       .done(function(data, message, xhr) {
         repos.all = data;
